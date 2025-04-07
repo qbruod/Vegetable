@@ -1,0 +1,19 @@
+GET http://39.106.144.42:5000/vegetable_stock
+Accept: application/json
+
+
+PUT http://127.0.0.1:5000/vegetable_s/10
+Content-Type: application/json
+
+{
+    "vegetable_name": "西红柿",
+    "vegetable_sold": 10,
+    "vegetable_price": 4.99
+}
+
+PUT http://127.0.0.1:5000/vegetable_stock/1
+Content-Type: application/json
+
+{
+    "vegetable_inventory":66
+}

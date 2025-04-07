@@ -1,0 +1,22 @@
+#app {
+  a:link {text-decoration:none}
+  .card-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    flex-wrap: wrap; /* 允许换行 */
+  }
+  
+  ul {
+    list-style-type: none; /* 移除列表项前的默认标记 */
+    padding: 0; /* 移除默认内外边距 */
+    margin: 0;
+    display: flex;
+    justify-content: center; /* 在 ul 内部也居中，确保 li 在横向上居中 */
+    flex-wrap: wrap; /* 如果有多余的卡片，允许换行 */
+  }
+  
+  .el-card {
+    /* 你可以根据需要调整卡片之间的间距 */
+    margin: 10px;
+  }
+}
