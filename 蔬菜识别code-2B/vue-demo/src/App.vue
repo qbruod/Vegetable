@@ -76,7 +76,7 @@ export default {
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/">
+              <router-link to="/vegetableAgent">
                 <a class="nav-link active" aria-current="page" href="#/">&emsp;智能体分析🤔&emsp;</a>
               </router-link>
             </li>

@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import VegMat from '../components/VegetableManagement.vue'
 import VegStk from '../components/VegetableStock.vue'
+import VegAge from '../components/VegetableAgent.vue'
 
 const routes=[
     {
@@ -12,6 +13,11 @@ const routes=[
         path:'/VegetableStock',
         name:'vegetableStock',
         component:VegStk
+    },
+    {
+        path:'/VegetableAgent',
+        name:'vegetableAgent',
+        component:VegAge
     }
 ];
 
