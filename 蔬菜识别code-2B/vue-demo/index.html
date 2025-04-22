@@ -11,3 +11,15 @@
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']], // 配置行内公式分隔符
+      displayMath: [['\\[', '\\]']] // 配置块级公式分隔符
+    },
+    options: {
+      enableMenu: false // 禁用右键菜单
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

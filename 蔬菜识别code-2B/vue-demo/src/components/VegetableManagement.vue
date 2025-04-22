@@ -39,37 +39,7 @@ const handleDelete = (index, scope) => {
   const content = `删除id2为${scope.id}的那条数据`;
   axios.delete(`http://localhost:5000/vegetable/${scope.id}`).then(() => {
     getVegetable();
-    // 拼接完整的内容字符串
     console.log(content);
-    // 与智能体创建会话，将数据传递给智能体
-    axios.post('https://api.coze.cn/v3/chat?conversation_id=7490931536938696744&', 
-          {
-            bot_id: "7490563331921543194",
-            user_id: "user",
-            auto_save_history: true,
-            stream: true,
-            additional_messages: [
-              {
-                content: content, // 使用拼接后的字符串
-                content_type: "text",
-                type: "question",
-                role: "user"
-              }
-            ]
-          },
-          {
-            headers: {
-              Authorization: 'Bearer pat_r26vcxpAo92sJ5ivwYHAsCzyvz8BsUn35VO9j3XT8dprSvmBVJaCuV3yaCCAluZG',
-              'Content-Type': 'application/json'
-            }
-          }
-        )
-        .then(response => {
-          console.log('智能体创建会话成功:', response.data);
-        })
-        .catch(error => {
-          console.error('智能体创建会话失败:', error);
-        });
   });
 };
 
@@ -100,35 +70,6 @@ const submitForm = _.throttle((formE1) => {
         formE1.resetFields();
         getVegetable();
         console.log(response.data.result);
-        // 拼接完整的内容字符串
-        axios.post('https://api.coze.cn/v3/chat?conversation_id=7490931536938696744&', 
-          {
-            bot_id: "7490563331921543194",
-            user_id: "user",
-            auto_save_history: true,
-            stream: true,
-            additional_messages: [
-              {
-                content: `添加一行数据`+JSON.stringify(response.data.result, null, 2), // 使用拼接后的字符串
-                content_type: "text",
-                type: "question",
-                role: "user"
-              }
-            ]
-          },
-          {
-            headers: {
-              Authorization: 'Bearer pat_r26vcxpAo92sJ5ivwYHAsCzyvz8BsUn35VO9j3XT8dprSvmBVJaCuV3yaCCAluZG',
-              'Content-Type': 'application/json'
-            }
-          }
-        )
-        .then(response => {
-          console.log('智能体创建会话成功:', response.data);
-        })
-        .catch(error => {
-          console.error('智能体创建会话失败:', error);
-        });
       });
       console.log('submit!')
     } else {
@@ -157,37 +98,7 @@ const submitEnitForm = _.throttle((formE1) => {
       axios.put(`http://localhost:5000/vegetable/${vegetable_form.id}`, vegetable_form).then(response => {
         edit_dialog_visible.value = false;
         getVegetable();
-        // 拼接完整的内容字符串
         console.log(response.data.result);
-        // 与智能体创建会话，将数据传递给智能体
-        axios.post('https://api.coze.cn/v3/chat?conversation_id=7490931536938696744&', 
-          {
-            bot_id: "7490563331921543194",
-            user_id: "user",
-            auto_save_history: true,
-            stream: true,
-            additional_messages: [
-              {
-                content: content+JSON.stringify(response.data.result, null, 2), // 使用拼接后的字符串
-                content_type: "text",
-                type: "question",
-                role: "user"
-              }
-            ]
-          },
-          {
-            headers: {
-              Authorization: 'Bearer pat_r26vcxpAo92sJ5ivwYHAsCzyvz8BsUn35VO9j3XT8dprSvmBVJaCuV3yaCCAluZG',
-              'Content-Type': 'application/json'
-            }
-          }
-        )
-        .then(response => {
-          console.log('智能体创建会话成功:', response.data);
-        })
-        .catch(error => {
-          console.error('智能体创建会话失败:', error);
-        });
       });
       console.log('submit!')
     } else {
