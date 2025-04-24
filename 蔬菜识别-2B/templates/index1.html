@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>蔬菜数量查询</title>
+
+    <!-- Bootstrap -->
+    <link href="/vue-demo/static/bootstrap5/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="/vue-demo/static/bootstrap5/js/jquery-3.2.1.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="/vue-demo/static/bootstrap5/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="shadow-sm p-2 mb-5 bg-body-tertiary rounded">
+            <p class="fs-1 fw-bolder" >蔬菜数量查询</p>
+        </div>
+        <div class="float-end">
+            <p class="fs-3 fw-bold" style="color: rgb(11, 94, 215); margin: 0px;">库存</p>
+        </div>
+        <div class="float-end">
+            <p class="fs-3 fw-bold" style="color: rgb(11, 94, 215);">今日售出&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="item1">
+            <div class="float-end">
+                <p class="fs-4 fw-bold" >10</p>
+            </div>
+            <div class="float-end">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>           
+            <div class="float-end">
+                <p class="fs-4 fw-bold" >10</p>
+            </div>
+            <p class="fs-4" >西红柿</p>
+            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"></div>
+            </div>
+        </div>
+        <br>
+        <div class="item2">
+            <div class="float-end">
+                <p class="fs-4 fw-bold" >10</p>
+            </div>
+            <div class="float-end">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>           
+            <div class="float-end">
+                <p class="fs-4 fw-bold" >10</p>
+            </div>
+            <p class="fs-4">土豆</p>
+            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn btn-primary btn-lg" href="#" role="button">刷新</a>
+        </div>
+    </div>
+    <script>
+        // 假设a和b是你的变量
+        var a = 10; // 例如，a的值
+        var b = 50;  // 例如，b的值
+    
+        // 计算宽度，这里以a为总长度，b为当前进度的参考进行计算，确保b不为0以避免除以0的错误
+        if (b !== 0) {
+            var width = (a / b) * 100; // 根据需要调整计算公式
+        } else {
+            var width = -10; // 防止b为0时的除法错误
+        }
+    
+        // 设置进度条的宽度
+        document.getElementById('progressBar').style.width = width + '%';
+        if (width <= 100&&width >= 0)
+        {
+            document.getElementById('progressBar').textContent = width + '%';
+        }
+        else
+        {
+            document.getElementById('progressBar').textContent = '数据错误';
+        }
+        // 同时可以设置aria-valuenow属性来表示进度条的当前值，对于辅助技术（如屏幕阅读器）友好
+        document.getElementById('progressBar').setAttribute('aria-valuenow', width);
+    </script>
+</body>
+</html>
