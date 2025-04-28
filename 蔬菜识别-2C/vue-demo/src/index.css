@@ -1,0 +1,13 @@
+:root {
+  --bg-green: #ecf8f1; /* 背景浅绿 */
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #fbfbfb;
+  background-color: var(--bg-green); /* 设置背景颜色为浅绿色 */
+  min-height: 100vh; /* 确保背景覆盖整个视口 */
+}

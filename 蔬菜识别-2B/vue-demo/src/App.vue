@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg  bg-primary" data-bs-theme="dark" >
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top" data-bs-theme="dark">
       <div class="container-fluid">
 
         <router-link to="/">
@@ -32,6 +32,8 @@
         </div>
       </div>
     </nav>
-    <router-view></router-view>
+    <div style="margin-top: 56px;">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
